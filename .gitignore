@@ -1,7 +1,7 @@
-.terraform
-.hcl
-.info
-.tfstate
-.tfstate.backup
-.backup
-.lock.hcl
+*.terraform/
+*.hcl
+*.info
+*.tfstate
+*.tfstate.backup
+*.backup
+*.lock.hcl
