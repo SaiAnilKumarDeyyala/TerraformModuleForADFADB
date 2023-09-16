@@ -1,0 +1,15 @@
+parameters:
+  - name: env
+    type: boolean
+  - name: svc
+    type: boolean
+
+stages:
+- stage: Deploy_Stage
+  displayName: ${{ parameters.env }}_Deploy_Stage
+  variables:
+  - template: "./variables/${{ parameters.env }}/var.yml"
+  jobs:
+  - job: Build
+    displayName: Build Job
+    steps:

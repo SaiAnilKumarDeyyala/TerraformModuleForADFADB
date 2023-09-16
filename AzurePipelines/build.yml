@@ -1,0 +1,27 @@
+parameters:
+  - name: env
+    type: boolean
+  - name: svc
+    type: boolean
+
+stages:
+- stage: Build_Stage
+  displayName: ${{ parameters.env }}_Build_Stage
+  variables:
+  - template: "./variables/${{ parameters.env }}/var.yml"
+  jobs:
+  - job: Build
+    displayName: Build Job
+    steps:
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Build.Repository.LocalPath)/'
+        Contents: '**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        CleanTargetFolder: true
+        
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'TerraformCode'
+        publishLocation: 'Container'
