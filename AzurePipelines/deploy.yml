@@ -1,8 +1,8 @@
 parameters:
   - name: env
-    type: boolean
+    type: string
   - name: svc
-    type: boolean
+    type: string
 
 stages:
 - stage: Deploy_Stage
