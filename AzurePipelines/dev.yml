@@ -18,7 +18,7 @@ variables:
     serviceConnectionName: ttl_prod_svc
 
 stages:
-  - template: "AzurePipelines/build.yml"
+  - template: "./build.yml"
     parameters:
       env: ${{ variables.environmentName }}
       svc: ${{ variables.serviceConnectionName }}
