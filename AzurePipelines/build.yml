@@ -7,8 +7,6 @@ parameters:
 stages:
 - stage: Build_Stage
   displayName: ${{ parameters.env }}_Build_Stage
-  variables:
-  - template: "./variables/${{ parameters.env }}/var.yml"
   jobs:
   - job: Build
     displayName: Build Job
