@@ -23,8 +23,8 @@ stages:
       env: ${{ variables.environmentName }}
       svc: ${{ variables.serviceConnectionName }}
   
-  - template: "AzurePipelines/deploy.yml"
-  - template: "AzurePipelines/build.yml"
-    parameters:
-      env: ${{ variables.environmentName }}
-      svc: ${{ variables.serviceConnectionName }}
+  # - template: "AzurePipelines/deploy.yml"
+  # - template: "AzurePipelines/build.yml"
+  #   parameters:
+  #     env: ${{ variables.environmentName }}
+  #     svc: ${{ variables.serviceConnectionName }}
